@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: InterGlobal;
+    src: url('@/font/inter.woff2') format(woff2);
+}
+
+:root {
+    font-family: InterGlobal, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  /* Ensure the root takes up the full viewport height */
+  min-height: 100vh;
+}
+
+header {
+  background-color: #111;
+  color: white;
+  padding: 1rem;
+}
+
+aside {
+  background-color: #f4f4f4;
+  padding: 1rem;
+  width: 300px;
+  transition: transform 0.3s ease;
+}
+
+main {
+  flex: 1;
+  padding: 1rem;
+  transition: margin-left 0.3s ease;
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
