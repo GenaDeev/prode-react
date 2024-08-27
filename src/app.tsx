@@ -35,7 +35,7 @@ export default function App() {
                 <Routes>
                     <Route path="/" element={<Home context={context} />} />
                     <Route path="/fecha/:fecha" element={<Home context={context} />} />
-                    <Route path="/participar/fecha/:fecha" element={<NewPrediction />} />
+                    <Route path="/participar/fecha/:fecha" element={<NewPrediction context={context} />} />
                     <Route path="/tabla" element={<Table />} />
                     <Route path="/usuario/:user" element={<Profile />} />
                 </Routes>

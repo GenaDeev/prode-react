@@ -12,7 +12,6 @@ export default function MatchDaySelector({ context }: SelectorContext) {
     const location = useLocation();
     const fechas = Array.from({ length: context.matchday.max }, (_, i) => i + 1);
     const [selected, setSelected] = useState(fechas[context.matchday.current - 1]);
-
     useEffect(() => {
         const match = location.pathname.match(/\/fecha\/(\d+)/);
         const selectedDate = match ? parseInt(match[1], 10) : context.matchday.current;
@@ -22,6 +21,20 @@ export default function MatchDaySelector({ context }: SelectorContext) {
             setSelected(selectedDate);
         }
     }, [location.pathname, fechas, selected, context.matchday.current]);
+
+    const to = (fecha: number) => {
+        const path = location.pathname.split('/')[1];
+    
+        if (path === '') {
+            return fecha === context.matchday.current ? '/' : `/fecha/${fecha}`;
+        } else if (path === 'fecha') {
+            return fecha === context.matchday.current ? '/' : `/fecha/${fecha}`;
+        } else if (path === 'participar' && location.pathname.split('/')[2] === 'fecha') {
+            return `/participar/fecha/${fecha}`;
+        } else {
+            return '/';
+        }
+    };
 
     return (
         <Listbox value={selected} onChange={setSelected}>
@@ -42,7 +55,7 @@ export default function MatchDaySelector({ context }: SelectorContext) {
                     className="absolute z-10 mt-1 max-h-56 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none data-[closed]:data-[leave]:opacity-0 data-[leave]:transition data-[leave]:duration-100 data-[leave]:ease-in sm:text-sm"
                 >
                     {fechas.map((fecha) => (
-                        <Link key={"fecha-" + fecha} to={fecha !== context.matchday.current ? "/fecha/" + fecha : "/"}>
+                        <Link key={"fecha-" + fecha} to={to(fecha)}>
                             <ListboxOption
                                 value={fecha}
                                 className="group relative cursor-default select-none py-2 pl-3 pr-9 text-gray-900 data-[focus]:bg-green-600 data-[focus]:text-white"

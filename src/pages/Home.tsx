@@ -9,6 +9,9 @@ interface HomeProps {
 export default function Home({ context }: HomeProps) {
     const { pathname } = useLocation();
     const isHomePage = pathname === "/";
+    const onGoalChange = () => {
+        return
+    }
     let { fecha }: { fecha?: number } = useParams();
     return (
         <div className="flex flex-col items-start gap-4">
@@ -29,7 +32,7 @@ export default function Home({ context }: HomeProps) {
                         ? fecha
                         : context.matchday?.current
                 ]?.map((match: Match) => (
-                    <MatchCard key={match.id} match={match} />
+                    <MatchCard onGoalsChange={onGoalChange} isEditable={false} key={match.id} match={match} />
                 )
                 )}
             </section>
