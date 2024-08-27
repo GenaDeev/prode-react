@@ -10,7 +10,6 @@ export default function Home({ context }: HomeProps) {
     const { pathname } = useLocation();
     const isHomePage = pathname === "/";
     let { fecha }: { fecha?: number } = useParams();
-    console.log(fecha)
     return (
         <div className="flex flex-col items-start gap-4">
             <h1 className="text-2xl font-bold mb-3">Fecha {fecha ? fecha : context.matchday.current} - Liga Profesional 2024</h1>
