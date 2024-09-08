@@ -1,9 +1,9 @@
 import { ChangeEvent } from 'react';
-import type { TeamProps } from '@/types/main';
+import type { TeamProps } from '@/types';
 
 export default function TeamComponent(props: TeamProps) {
     const { shortName, fullName, id, goals, isEditable, onGoalChange } = props;
-    
+
     const handleGoalChange = (event: ChangeEvent<HTMLInputElement>) => {
         const newGoals = Number(event.target.value) || undefined;
         onGoalChange(newGoals);

@@ -1,6 +1,6 @@
 import MatchDaySelector from '@/components/MatchDaySelector';
 import TablePreview from '@/components/TablePreview';
-import type { Context } from '@/types/main';
+import type { Context } from '@/types';
 import { useLocation } from 'react-router-dom';
 interface AsideProps {
     context: Context;

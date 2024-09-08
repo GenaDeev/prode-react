@@ -2,7 +2,7 @@ import { useState } from "react";
 import { matches } from "@/data/matches";
 import { tokens } from "@/data/tokens";
 import MatchCard from "@/components/MatchCard";
-import type { Match, ContextProps } from "@/types/main";
+import type { Match, ContextProps } from "@/types";
 import { useParams, Link } from "react-router-dom";
 
 export default function NewPrediction({ context }: ContextProps) {

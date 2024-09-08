@@ -1,5 +1,5 @@
 import TeamComponent from "./TeamComponent";
-import type { MatchCardProps } from "@/types/main";
+import type { MatchCardProps } from "@/types";
 
 export default function MatchCard(props: MatchCardProps) {
     const { match, isEditable, onGoalsChange, homeGoals, awayGoals } = props;

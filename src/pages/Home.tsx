@@ -1,6 +1,6 @@
 import { matches } from "@/data/matches"
 import MatchCard from "@/components/MatchCard"
-import type { Match, ContextProps } from "@/types/main";
+import type { Match, ContextProps } from "@/types";
 import { Link, useLocation, useParams } from "react-router-dom";
 
 export default function Home({ context }: ContextProps) {

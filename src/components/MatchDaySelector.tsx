@@ -2,7 +2,7 @@ import { Label, Listbox, ListboxButton, ListboxOption, ListboxOptions } from '@h
 import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid'
 import { Link, useLocation } from 'react-router-dom'
 import { useState, useEffect } from 'react'
-import type { ContextProps } from '@/types/main'
+import type { ContextProps } from '@/types'
 
 export default function MatchDaySelector({ context }: ContextProps) {
     const location = useLocation();
@@ -11,7 +11,7 @@ export default function MatchDaySelector({ context }: ContextProps) {
     useEffect(() => {
         const match = location.pathname.match(/\/fecha\/(\d+)/);
         const selectedDate = match ? parseInt(match[1], 10) : context.matchday.current;
-        
+
         // Verifica si la fecha detectada es diferente a la seleccionada actualmente.
         if (fechas.includes(selectedDate) && selectedDate !== selected) {
             setSelected(selectedDate);
@@ -20,7 +20,7 @@ export default function MatchDaySelector({ context }: ContextProps) {
 
     const to = (fecha: number) => {
         const path = location.pathname.split('/')[1];
-    
+
         if (path === '') {
             return fecha === context.matchday.current ? '/' : `/fecha/${fecha}`;
         } else if (path === 'fecha') {

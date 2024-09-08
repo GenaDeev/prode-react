@@ -1,7 +1,7 @@
-import type { TableProps } from "@/types/main"
+import type { TableProps } from "@/types"
 
 export default function TableFull(props: TableProps) {
-    const {headers, data, isGlobalTable} = props;
+    const { headers, data, isGlobalTable } = props;
     return (
         <div className="container mb-4 flex justify-center lg:justify-normal">
             <table className="bg-white border border-gray-200">

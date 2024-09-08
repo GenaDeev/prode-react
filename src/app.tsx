@@ -11,7 +11,7 @@ import Header from '@/components/Header';
 import Aside from '@/components/Aside';
 import Footer from '@/components/Footer';
 // Tipos
-import type { Context } from '@/types/main';
+import type { Context } from '@/types';
 
 export default function App() {
     const context: Context = {
