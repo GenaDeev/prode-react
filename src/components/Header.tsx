@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"
+import { Link, NavLink } from "react-router-dom"
 import type { ContextProps } from "@/types"
 import { useState } from "react";
 
@@ -38,10 +38,10 @@ export default function Header({ context, toggleAside }: { context: ContextProps
                 </div>
                 <ul className="flex items-center gap-4">
                     <li className="hover:text-green-500 transition duration-200">
-                        <Link to={"/participar/fecha/" + context.context.matchday.current}>Participar</Link>
+                        <NavLink to={"/participar/fecha/" + context.context.matchday.current}>Participar</NavLink>
                     </li>
                     <li className="hover:text-green-500 transition duration-200">
-                        <Link to="/tabla">Tabla</Link>
+                        <NavLink to="/tabla">Tabla</NavLink>
                     </li>
                 </ul>
             </nav>
