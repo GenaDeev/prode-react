@@ -1,16 +1,8 @@
 // components/MatchCard.tsx
 import TeamComponent from "./TeamComponent";
-import type { Match } from "@/types/main";
+import type { MatchCardProps } from "@/types/main";
 
-interface Props {
-    match: Match;
-    isEditable: boolean;
-    onGoalsChange: (homeGoals: number | undefined, awayGoals: number | undefined) => void;
-    homeGoals?: number;
-    awayGoals?: number;
-}
-
-export default function MatchCard(props: Props) {
+export default function MatchCard(props: MatchCardProps) {
     const { match, isEditable, onGoalsChange, homeGoals, awayGoals } = props;
 
     const handleHomeGoalChange = (goals: number | undefined) => {

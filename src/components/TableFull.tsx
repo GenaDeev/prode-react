@@ -1,12 +1,6 @@
-import type { Table } from "@/types/main"
+import type { TableProps } from "@/types/main"
 
-interface Props {
-    headers: string[],
-    data: Table[],
-    isGlobalTable: boolean
-}
-
-export default function TableFull(props: Props) {
+export default function TableFull(props: TableProps) {
     const {headers, data, isGlobalTable} = props;
     return (
         <div className="container mb-4 flex justify-center lg:justify-normal">

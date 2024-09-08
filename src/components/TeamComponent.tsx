@@ -1,16 +1,8 @@
 // components/TeamComponent.tsx
 import { ChangeEvent } from 'react';
+import type { TeamProps } from '@/types/main';
 
-interface Props {
-    shortName: string;
-    fullName: string;
-    id: number;
-    goals: number | undefined;
-    isEditable: boolean;
-    onGoalChange: (goals: number | undefined) => void;
-}
-
-export default function TeamComponent(props: Props) {
+export default function TeamComponent(props: TeamProps) {
     const { shortName, fullName, id, goals, isEditable, onGoalChange } = props;
     
     const handleGoalChange = (event: ChangeEvent<HTMLInputElement>) => {

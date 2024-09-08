@@ -3,14 +3,10 @@ import { useState } from "react";
 import { matches } from "@/data/matches";
 import { tokens } from "@/data/tokens";
 import MatchCard from "@/components/MatchCard";
-import type { Match, Context } from "@/types/main";
+import type { Match, ContextProps } from "@/types/main";
 import { useParams, Link } from "react-router-dom";
 
-interface ParticipateProps {
-    context: Context;
-}
-
-export default function NewPrediction({ context }: ParticipateProps) {
+export default function NewPrediction({ context }: ContextProps) {
     const { fecha } = useParams();
     const index = fecha !== undefined && !isNaN(parseInt(fecha, 10))
         ? parseInt(fecha, 10)

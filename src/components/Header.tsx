@@ -1,12 +1,8 @@
 import { Link } from "react-router-dom"
-import type { Context } from "@/types/main"
+import type { ContextProps } from "@/types/main"
 import { useState } from "react";
-interface HeaderProps {
-    context: Context;
-    toggleAside: any;
-}
 
-export default function Header({ context, toggleAside }: HeaderProps) {
+export default function Header({ context }: ContextProps, {toggleAside}: any) {
     const [isOpen, setIsOpen] = useState(false);
 
     const handleClick = () => {

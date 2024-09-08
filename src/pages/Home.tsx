@@ -1,12 +1,9 @@
 import { matches } from "@/data/matches"
 import MatchCard from "@/components/MatchCard"
-import type { Context, Match } from "@/types/main";
+import type { Match, ContextProps } from "@/types/main";
 import { Link, useLocation, useParams } from "react-router-dom";
-interface HomeProps {
-    context: Context;
-}
 
-export default function Home({ context }: HomeProps) {
+export default function Home({ context }: ContextProps) {
     const { pathname } = useLocation();
     const isHomePage = pathname === "/";
     const onGoalChange = () => {

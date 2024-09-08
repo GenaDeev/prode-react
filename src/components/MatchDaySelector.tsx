@@ -2,13 +2,9 @@ import { Label, Listbox, ListboxButton, ListboxOption, ListboxOptions } from '@h
 import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid'
 import { Link, useLocation } from 'react-router-dom'
 import { useState, useEffect } from 'react'
-import type { Context } from '@/types/main'
+import type { ContextProps } from '@/types/main'
 
-interface SelectorContext {
-    context: Context;
-}
-
-export default function MatchDaySelector({ context }: SelectorContext) {
+export default function MatchDaySelector({ context }: ContextProps) {
     const location = useLocation();
     const fechas = Array.from({ length: context.matchday.max }, (_, i) => i + 1);
     const [selected, setSelected] = useState(fechas[context.matchday.current - 1]);
