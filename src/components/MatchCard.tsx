@@ -1,4 +1,3 @@
-// components/MatchCard.tsx
 import TeamComponent from "./TeamComponent";
 import type { MatchCardProps } from "@/types/main";
 

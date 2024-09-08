@@ -1,4 +1,3 @@
-// components/TeamComponent.tsx
 import { ChangeEvent } from 'react';
 import type { TeamProps } from '@/types/main';
 

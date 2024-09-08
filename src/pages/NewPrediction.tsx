@@ -1,4 +1,3 @@
-// pages/NewPrediction.tsx
 import { useState } from "react";
 import { matches } from "@/data/matches";
 import { tokens } from "@/data/tokens";
