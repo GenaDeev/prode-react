@@ -9,7 +9,7 @@ export default function Home({ context }: ContextProps) {
     const onGoalChange = () => {
         return
     }
-    let { fecha }: { fecha?: number } = useParams();
+    const { fecha }: { fecha?: number } = useParams();
     return (
         <div className="flex flex-col items-start gap-4">
             <h1 className="text-2xl font-bold mb-3">Fecha {fecha ? fecha : context.matchday.current} - Liga Profesional 2024</h1>

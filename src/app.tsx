@@ -11,7 +11,7 @@ import Header from '@/components/Header';
 import Aside from '@/components/Aside';
 import Footer from '@/components/Footer';
 // Tipos
-import type { Context } from '@/types';
+import type { Context, ContextProps } from '@/types';
 
 export default function App() {
     const context: Context = {
@@ -21,15 +21,20 @@ export default function App() {
         }
     };
 
+    const propContext: ContextProps = {
+        context,
+    };
+
     const [isAsideOpen, setIsAsideOpen] = useState(true);
 
     const toggleAside = () => {
         setIsAsideOpen(prev => !prev);
+        return null;
     }
 
     return (
         <BrowserRouter>
-            <Header context={context} toggleAside={toggleAside} />
+            <Header context={propContext} toggleAside={toggleAside} />
             <Aside context={context} isOpen={isAsideOpen} />
             <main className='lg:ml-[256px] px-6 py-[96px]'>
                 <Routes>

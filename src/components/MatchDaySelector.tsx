@@ -8,15 +8,16 @@ export default function MatchDaySelector({ context }: ContextProps) {
     const location = useLocation();
     const fechas = Array.from({ length: context.matchday.max }, (_, i) => i + 1);
     const [selected, setSelected] = useState(fechas[context.matchday.current - 1]);
+    
     useEffect(() => {
         const match = location.pathname.match(/\/fecha\/(\d+)/);
         const selectedDate = match ? parseInt(match[1], 10) : context.matchday.current;
-
+    
         // Verifica si la fecha detectada es diferente a la seleccionada actualmente.
         if (fechas.includes(selectedDate) && selectedDate !== selected) {
             setSelected(selectedDate);
         }
-    }, [location.pathname, fechas, selected, context.matchday.current]);
+    }, [location.pathname, fechas, selected, context.matchday]);    
 
     const to = (fecha: number) => {
         const path = location.pathname.split('/')[1];

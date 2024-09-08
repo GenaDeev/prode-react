@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 import type { ContextProps } from "@/types"
 import { useState } from "react";
 
-export default function Header({ context }: ContextProps, { toggleAside }: any) {
+export default function Header({ context, toggleAside }: { context: ContextProps, toggleAside: () => null }) {
     const [isOpen, setIsOpen] = useState(false);
 
     const handleClick = () => {
@@ -38,7 +38,7 @@ export default function Header({ context }: ContextProps, { toggleAside }: any) 
                 </div>
                 <ul className="flex items-center gap-4">
                     <li className="hover:text-green-500 transition duration-200">
-                        <Link to={"/participar/fecha/" + context.matchday.current}>Participar</Link>
+                        <Link to={"/participar/fecha/" + context.context.matchday.current}>Participar</Link>
                     </li>
                     <li className="hover:text-green-500 transition duration-200">
                         <Link to="/tabla">Tabla</Link>
